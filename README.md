@@ -177,5 +177,15 @@ In the above example, when the function abcd() will get executed it's execution 
 
      Using a spread operator the values of the original gets unpacked and we can store them anywhere.
 
+Similary we copy objects in javascript using same spread operator. 
+
+ 	Ex. const a = { 
+  			name : "Ruchit",
+     			age : 21
+	 	      }
+	 const b = {...a}
+  
+                        
+
 
  
