@@ -26,7 +26,7 @@
         let b = a; 
         b.pop();
         now a and b both will be [1,2,3]
-	Because of this behaviour of reference type we usually don't copy the reference type using above logic i.e. b = a instead we write b = a.copy()
+	Because of this behaviour of reference type we usually don't copy the reference type using above logic i.e. b = a instead we write b = [...a] 
 
 ** Primitives are opposite of Reference type, when primitived get copied their duplicate value are copied, which if changed in other variable, it does not affect the original variable. **
 
@@ -138,4 +138,44 @@
             console.log(i)
 	 }
      Here we can even print i outside the loop because it was declare using a Var keyword and var is valid anywhere inside the function scope, which in most programming language gives error.
-    
+
+ To tackle the above property Let keyword was introduced which has a braces scope. It means it is only valid inside the curly braces under a loop or a conditional. In example we can say that in the above example
+ if we would have declared a variable i with Let then outside the loop the console.log(i) would have given an error because let has only braces scope so it will only exist inside the loop above.
+
+ 3 : Var adds itself to the window object. It means any variable declared with Var gets added to window object which exposes to 3rd party api which is not safe. So this thing was removed in Let.
+
+ # 11 : Window Object
+ => There are many features which we use to develop websites which are not provided by javascript but are provided by the Browser. All these feature which are not the part of JS , we can find them in an object provided by the Browser known as Window Object. Window object is like a box of features which is JS uses to implement various things.
+
+ # 12 : Stack Memory and Heap Memory
+ => Stack memory in Javascript is used to store the execution order of multiple function. If we use nested functions in a program they get added to the stack and later they are executed based on Last In First Out order. Heap Memory is used to store the variables and date during execution.
+
+ # 13 : Execution Context
+ => Execution Context is basically when we execute a function, then it will create it's own imaginary container where there will be 3 things : 
+ 
+1 : variables
+
+2 : functions inside that parent function
+
+3 : lexical environment
+
+ 	Ex. function abcd() 
+  	    {
+               var a = 2;
+	       function def()
+		{
+  			var x = 5;
+  		}
+    	    }
+In the above example, when the function abcd() will get executed it's execution context will be created and inside that var a and function def() will be stored. But var x will not be stored because var has function scope and variable x's parent is def(), so it can't be accessed outside the function def(). This property is called Lexical Scope or Lexical Environment, which decides that a function can access what values. The lexical scope exists where there is a scope chain, i.e. a chain of nested functions.
+
+# 14 : How to Copy Reference Type Values
+=> As we have studied earlier that if we directly copy a reference type value in another variable. Ex. const a = [1,2,3,4] and b = a, then it will copy the original array and if we make any changes to the original array then the copied array will also be modified. So to tackle this we copy a reference type value using a Spred Operator.
+
+	Ex. const a = [1,2,3,4,5]
+            const b = [...a]
+
+     Using a spread operator the values of the original gets unpacked and we can store them anywhere.
+
+
+ 
