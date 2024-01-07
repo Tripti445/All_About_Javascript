@@ -1,4 +1,77 @@
-# 1 : Arrays
+# 1 : Word vs Keyword
+=> any word that is identified by javascript and has a predefined usage in the language is known as a keyword (ex. is, and, for) and any word other than 
+   the keyword which is not identified by javascript is called a normal word (ex. papa, chacha, hello)
+
+# 2 : Variables vs Const
+=> variable is used to store a value in javascript which can change as per the requirement in future whereas a constant is used to store a value whose value will remain same
+   throughout the program and cannot be changed.
+
+# 3 : Hoisting
+=>  In Javascript we can use a variable or a function even before it is declared. This process or feature in JS is called Hoisting. In this process javascript's compiler brings 
+    the declaration code of the variable or a function to the top of the program behind the scene.
+
+    Ex. console.log(var1);
+        let var1;
+	
+# 4 : Types in JS
+=>  There are two types in JS -> Primitives and Reference
+
+<b>Primitives</b> -> null undefined Boolean 
+
+<b>Reference</b> -> [ ], { }, ( ) (brackets are reference type)
+    
+** Reference type values are those values which when copied to other variable then the original one gets copied, which once changed in other variable affects the same in the original variable also **
+
+    Ex. let a = [1,2,3,4]
+        let b = a; 
+        b.pop();
+        now a and b both will be [1,2,3]
+	Because of this behaviour of reference type we usually don't copy the reference type using above logic i.e. b = a instead we write b = a.copy()
+
+** Primitives are opposite of Reference type, when primitived get copied their duplicate value are copied, which if changed in other variable, it does not affect the original variable. **
+
+    Ex. let a = 12;
+        let b = a;
+        b = b+2;
+        now a is 12 and b is 14; 
+
+# 5 : Conditionals in JS
+=> Conditionals in JS are used to specify a condition for a particular part of the program to run, if it satisfies the condition. 
+
+   The conditionals accept only 2 types of value : Truthy and Falsy.
+   
+    Ex. if(11>12)      ** here the conditions converts to false, hence the Else part of code will run
+         {
+ 	     xyz;
+	 }
+       else
+	{
+             wxy;
+        }
+
+# 6 : Loops
+=> Loops are used to repeat a code n number of times based on the loop condition without repeatedly writing the code. 3 loops are present in JS :
+
+   1: For Loop
+   
+   2: While Loop
+   
+   3: Do-While Loop
+
+# 7 : Functions in JS
+
+=> Function is particulary naming a piece of code which can be used any time with any data and any number of time. Functions in JS are mainly for 3 usecases : 
+
+   1 : When you don't want to run the particular code right now but after sometime in future
+   
+   2 : When you want to reuse the code
+   
+   3 : When you want to run a particular code with different data everytime.
+
+
+
+	
+# 8 : Arrays
 => Arrays in Javascript are used to store more than one value. Ex. [1,2,3,4]. There are various operations performed on arrays
 
    i) Pop -> Pop is used to remove last element of the array. The popped array can also be stored in a variable.
@@ -30,7 +103,7 @@
                     arr.slice(1) -> [2,3,4]
 
    
-# 2: Objects in Javascript
+# 9: Objects in Javascript
 
 => When we talk about more than one element we called it an array. But when we talk about a single element in detail we represent it as an object. Objects means to store details 
    of a single individual.
@@ -48,10 +121,21 @@
    Objects basically contains key value pairs, where keys are referred to as "Properties". Objects also contain methods whose value is a function. We can change the values of objects 
    obj1.name = "Harsh";
 
-# 3 : ES6 Javascript (var vs let vs const)
+# 10 : ES6 Javascript (var vs let vs const)
 => The makers of Javascript created 2 versions of Javascript ES5 that was till 2015. In 2015 the makers introduced a new version of Javascript known as ES6. In ES5 there was only var keyword to initialize variables. But in ES6 let and const keywords were introduced to create variables, so in ES6 version there is only let and const but not var but In Browser it supports both combination of ES5 and ES6 because of which we are able to use all 3 var, let and const to declare variables.
 
 ### Point of Difference between Var and Let keywords : 
 1 : Var Existed in older Version of Javascript whereas Let was introduced in the new version of Javascript i.e. ES6.
 
-2 : Var has function scope, whereas Let has braces Scope. 
+2 : Var has function scope that means Var can be used anywhere inside it's parent function's scope.
+    
+    Ex. function test()
+    	{
+     	   for(var i=0;i<10;i++)
+	       {
+               console.log(i);
+	        }
+            console.log(i)
+	 }
+     Here we can even print i outside the loop because it was declare using a Var keyword and var is valid anywhere inside the function scope, which in most programming language gives error.
+    
