@@ -184,6 +184,24 @@ Similary we copy objects in javascript using same spread operator.
      			age : 21
 	 	      }
 	 const b = {...a}
+
+  # Truthy vs Falsy Values
+  => In Javascript whatever we write is basically one out of two things. Either the value is Truthy or Falsy.
+  
+  <b>Falsy Values : </b> 0, False, undefined, Null, NaN, document.all
+
+  All values other than Falsy values are Truthy. So if we put any Falsy value in a conditional statement then the else part of the condition runs, and if we put a Truthy value in a conditional then the If part of the conditional will execute.
+
+  	Ex. if(1)
+   		{
+         	  console.log("Hello");
+	    	}
+	    else
+     		{
+       		  console.log("Bye");
+	        }
+	Since 1 is a Truthy value so it will give output as "Hello"
+       
   
                         
 
