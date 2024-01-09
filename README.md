@@ -185,7 +185,7 @@ Similary we copy objects in javascript using same spread operator.
 	 	      }
 	 const b = {...a}
 
-  # Truthy vs Falsy Values
+# 15 Truthy vs Falsy Values
   => In Javascript whatever we write is basically one out of two things. Either the value is Truthy or Falsy.
   
   <b>Falsy Values : </b> 0, False, undefined, Null, NaN, document.all
@@ -201,9 +201,29 @@ Similary we copy objects in javascript using same spread operator.
        		  console.log("Bye");
 	        }
 	Since 1 is a Truthy value so it will give output as "Hello"
-       
-  
-                        
 
+# 16 forEach() Loop
+=> forEach Loop can be used only in Array. For Each loop is used to apply a function to every value in the array
+
+	Ex. const arr= [1,2,3,4,5,6];
+
+	    arr.forEach(function(val)=>{
+     		console.log(val+2);
+            })
+  forEach loop does not make changes in the original array, but makes the changes in the temporary copy of the array. The values that get passed to the function inside forEach loop does not actually gets copies, but it's temp copy is passed.
+                        
+# 17 For in Loop
+=> For In loop can only be used in Javascript Objects. 
+
+	Ex. const obj1 = {
+                           name : "Ruchit",
+			   age : 23,
+                           company : "HSBC"
+		         }
+	   
+	 for(var key in obj1)
+        {
+		console.log(obj1[key]);
+	}
 
  
