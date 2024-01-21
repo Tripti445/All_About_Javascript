@@ -337,7 +337,7 @@ In short we can say that we use a constructor function when you want to create m
 	  {
             name : "Ruchit"
 	  }
-# IIFE
+# 26 IIFE
 => Immediately Invoked Function Expression is the art of immediately exectuing the function in such a way that we are able to create a private variable which can't be changed and cant' be accessed. It is basically created to make a variable safe from getting changed from outside soruce. We create a Getter and Setter method to access and change the value of the private variable.
 
  	    var a = ( function(){
@@ -356,5 +356,8 @@ In short we can say that we use a constructor function when you want to create m
 	a.setter(14);
 	
 	a.getter()
+
+ # 27 Prototypes
+ => If we create an object and then put a "." after the object name in the console, then it will start showing some properties of the object which were not defined by ther user. Ex. ".length()". So these properties were created by the java developers which has some predefined properties for every object created in JS. These predefined helper properties and methods present in every object in JS is stored in that object's prototype. 
  		
    
