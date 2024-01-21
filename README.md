@@ -222,8 +222,77 @@ Similary we copy objects in javascript using same spread operator.
 		         }
 	   
 	 for(var key in obj1)
-        {
-		console.log(obj1[key]);
-	}
+            {
+		console.log(obj1[key]);     # output - "Ruchit", 23, "HSBC"
+	    }
 
+# 18 Do-While Loop
+=> Do-While loop is different from While Loop because in Do-While loop, the Do part is executed first even before first time while condition is checked. This means that whether the condition matches or not, in Do-While the Do part will execute atleast once.
+
+	Ex. var a=120;
+
+         do
+	     {
+           console.log("Hey");
+           a++;
+	     }
+        while(a<15);
+
+     # Here the condition is false but still atleast once "Hey" will get printed.
+
+# 19 Callback Functions
+=> In Javascript when there is a part of code that is planned to execute after sometime and that time is not confirmed or confirmed, such part of code is kept inside a callback function which is used to execute that part of code after set or unset time. This callback function is part of Asynchronous Javascript. For ex. If there is a button to bring an image from Facebook Server, after clicking the button we don't know how much time the process will take. In this case we will use callback function which will notify us when the process is completed so that we can execute further part of the code after the facebook image execution is completed.
+
+ 	Ex. setTimeOut(function(){
+  		console.log("Hello Callback Function");
+    		},2000)
+      
+       # In above code the setTimeOut is a callback function which executes the passed function after the set time, in above case 2 seconds.
+
+# 20 First Class Functions
+=> In Javascript there is a feature that we can use a function as a value or we can pass function as a parameter to another function because in JS the functions are first class functions
+
+	Ex. 1 
+ 		var a = function() {
+   				 console.log("First Class Function");
+				}
+
+    	Ex. 2  function abcd(a)
+                  {
+	                a();
+                  }
+
+               abcd(function(){console.log("Fist Class Function")});
+
+# 21 How Arrays are Made Behind the Scenes
+=> In Javascript arrays are actually Objects. If we write typeOf([]) , it will give output as "object". 
+
+ 	Ex. var a= [1,2,3,4]
+
+	Javascript stores the above array as follows
+
+  	var a = {
+   		0 : 1,
+            2 : 2,
+	        3 : 3,
+            4 : 4,
+	        }
+
+       We can make negative index in the array also
+       a[-1] = 99;
+
+       Output : [ 1, 2, 3, 4, '-1': 99 ]
+
+# 22 How to Delete Object keys 
+=> In Javascript we can delete the object key:value entirely from the object memory
+
+ 	Ex. const obj = {
+                    name : "Ruchit",
+			age : 22
+                    }
+
+             delete obj.age;
+
+          Output : {name : "Ruchit"}
+		
  
