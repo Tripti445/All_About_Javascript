@@ -294,5 +294,67 @@ Similary we copy objects in javascript using same spread operator.
              delete obj.age;
 
           Output : {name : "Ruchit"}
+
+# 23 Higher Order Functions
+=> Higher Order Functions are those functions which accept a function as it's parameter.
+
+ 	Ex. function abcd(val)
+                     {
+		       val()
+	             }
+	   abcd(function(){console.log("Higher Order")})   # This is a Higher Order Function because it accepts another function as it's parameter
+
+       Ex. Javascript has some pre defined higher order functions. ForEach, setTimeOut, etc.
+       		const arr = [1,2,3,4]
+	        arr.forEach(function(val)(
+	 		val = val+1;
+	        ))
+	 Here in the above example forEach passes another function as it's parameter, so forEach is a Higher Order Function.
 		
- 
+ # 24 Constructor Functions
+ => Constructor functions are those functions which requires a "new" keyword during it's declaration and uses "this" keyword inside the function. Ex. in a Biscuit Factory, there is a mould which has some fixed properties and that mould presses the batter and creates 
+    similar bisuits having property that of the mould. The mould in this case is the constructor function and the biscuits produced are the instances of that function.
+
+    	Ex. function mould() 
+             {
+	         this.width = 12;
+	  	 this.height = 22;
+             this.color = "Brown";
+		 this.taste = "sweet";
+            }
+         let bisuit1 = new mould();    # here the bisuit1 is the instance of the constructor function mould(). It has all the properties defined inside the mould function.
+In short we can say that we use a constructor function when you want to create multiple elements of the same type.
+
+# 25 New Keyword
+=> Whenever the "New" keyword is used, it represents an empty object with the name "this" keyword.
+
+ 	Ex. function abcd()
+  	  {
+             this.name= "Ruchit";
+	  }
+   
+          new abcd()  # by using "new" keyword here we create an empty object
+	  {
+            name : "Ruchit"
+	  }
+# IIFE
+=> Immediately Invoked Function Expression is the art of immediately exectuing the function in such a way that we are able to create a private variable which can't be changed and cant' be accessed. It is basically created to make a variable safe from getting changed from outside soruce. We create a Getter and Setter method to access and change the value of the private variable.
+
+ 	    var a = ( function(){
+	    var privateVal = 12;
+	    
+	    return {
+	        getter: function(){
+	            console.log(privateVal);
+	        },
+	        setter : function(val){
+	            privateVal = val;
+	        }
+	    }
+	})()
+	
+	a.setter(14);
+	
+	a.getter()
+ 		
+   
