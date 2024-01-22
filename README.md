@@ -397,5 +397,13 @@ In short we can say that we use a constructor function when you want to create m
       		this.style.color = "red";
 		})
   	Here 'this' keyword will represent the button object and can manipualte the color of the button.
+# 30 Call, Apply, Bind
+=> <b>Call : </b> When you have a function and an object and you have to execute the function and by default the value of "this" keyword inside the function scope is the window object, that we need to change and instead we need to make it point to an object then we use call method.
+
+ 	Ex. function abcd() {
+  		console.log(this.age)
+    		}
+               var obj = {age : 24}
+	           abcd.call(obj)
  		
    
