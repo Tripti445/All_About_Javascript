@@ -359,5 +359,43 @@ In short we can say that we use a constructor function when you want to create m
 
  # 27 Prototypes
  => If we create an object and then put a "." after the object name in the console, then it will start showing some properties of the object which were not defined by ther user. Ex. ".length()". So these properties were created by the java developers which has some predefined properties for every object created in JS. These predefined helper properties and methods present in every object in JS is stored in that object's prototype. 
+
+ # 28 Prototype Inheritance
+ => Like every child inherit some properties of it's parents and has some additional properties in himself, similary in JS objects we can inherit some properties of other object known as parent object.
+
+  	Ex. const Human = {              # parent object having basic properties of a human being
+   		canTalk : true,
+     		canWalk : true,
+       		hasFourLegs : false,
+	 	haveEmotions : true
+             }
+
+            const Student = {            # child object having some additional properties above basic human being
+	    	canStudy = true,
+      		canSolveProblems : true,
+		canRead : true,
+	     }
+
+      	    Student.__proto__ = Human;  # syntax to inherit properties from Parent object i.e. Human 
+
+    # Now we can access the properties of Human object from Student object because we have inherited them and now they are the part of Student object Protoype.
+
+# 29 "This" Keyword
+=>  When we write anything outside {} brackets then we say that the code is in the Global Scope. If we use "this" keyword in the Global Scope then it returns the <b>Window</b> object. In the Function scope i.e. inside a function also "This" keyword returns a window object. A function inside an object is called "Method". Inside a method the value of "this" keyword will refer to the parent object itself.
+
+ 	Ex. const obj1 = {
+                 name : "Ruchit",
+		 speak : function abcd(){
+    			console.log(this)
+       			}
+  		}
+           obj1.speak();  # it will give output as the object obj1 itself
+
+   	In DOM Manipulation, if we are using an addEventListener to a button, and inside the even listener if we add "this" , then "this" will refer to the button object and can be used to mnaipulate it's properties.
+
+     	Ex. button.addEventListener(function(){
+      		this.style.color = "red";
+		})
+  	Here 'this' keyword will represent the button object and can manipualte the color of the button.
  		
    
