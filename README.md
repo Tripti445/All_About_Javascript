@@ -405,5 +405,28 @@ In short we can say that we use a constructor function when you want to create m
     		}
                var obj = {age : 24}
 	           abcd.call(obj)
+
+            If we have to pass some parameters in call function.
+	    	function abcd(val1,val2,val3){
+      			  console.log(this,val1,val2,val3)
+      			}
+	 		var obj = {age:24}
+     			abcd.call(obj,1,2,3)  # this will give output as {age:24},1,2,3
+<b>Apply : </b> In Apply method we have the same process like in Call, but the difference is that in Call where we were passing arguments separately, in apply we pass an array for multiple values
+
+   	Ex. function abcd(val1,val2,val3){
+      			  console.log(this,val1,val2,val3)
+      			}
+	 		var obj = {age:24}
+     			abcd.call(obj,[1,2,3])  # this will give output as {age:24},1,2,3
+<b>Bind : </b> Bind is used to bind a function and an object and save it in a variable and use that Binded Object and Function for later use. Sometimes we want the object and function not to be executed immediately, instead after some event has happened like a button is clicked. At that time we used this binded object and function created using Bind method
+
+ 	Ex. Ex. function abcd() {
+  		console.log(this.age)
+    		}
+               var obj = {age : 24}
+	           var bindedObj = abcd.bind(obj)
+
+ 	
  		
    
