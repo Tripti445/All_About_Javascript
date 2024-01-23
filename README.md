@@ -427,6 +427,9 @@ In short we can say that we use a constructor function when you want to create m
                var obj = {age : 24}
 	           var bindedObj = abcd.bind(obj)
 
- 	
+ # 31 Pure and Impure Function
+ => In Javascript a function is said to be a Pure Function if it has any of the following properties
+ 	1 : For same input in a function it should give the same output everytime. (but in Math.random(), even if you give same input it will give different output everytime, so it is an impure function)
+  	2 : It should never change the value of the variables in the global scope.
  		
    
