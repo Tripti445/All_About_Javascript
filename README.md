@@ -446,6 +446,8 @@ In short we can say that we use a constructor function when you want to create m
      In Async execution, first all the four tasks will start at the same time, first the task D will complete it's execution coz its taking smallest time, then after 1 sec task A will give it's output, similary after sometime tasks B and C will give their answer. So overall Async execution will take less time than Synch execution, coz here tasks executes parallely.
 
 <b>How to know if we are writing Asynchronous Code </b> : If we are using setTimeOut, setTimeInterval, Promises,fetch, axios, XMLHttpRequest. These methods are asynchronous.
+
+<b>Asynchronous Javascript : </b>By Default Javascript is Synchronous in nature which means it executes a code sequentially. But if in between the code there is a server request which will take some amount of time to get the response from the server, and the execution time is not confirmed then in that case we use async javascipt to execute that line. Because if we will not use async there then the further line of code will execute before the previous line will get the response and return the ans.
      
  		
    
