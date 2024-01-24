@@ -428,8 +428,24 @@ In short we can say that we use a constructor function when you want to create m
 	           var bindedObj = abcd.bind(obj)
 
  # 31 Pure and Impure Function
- => In Javascript a function is said to be a Pure Function if it has any of the following properties
- 	1 : For same input in a function it should give the same output everytime. (but in Math.random(), even if you give same input it will give different output everytime, so it is an impure function)
-  	2 : It should never change the value of the variables in the global scope.
+ => In Javascript a function is said to be a Pure Function if it has any of the following properties : 
+ 
+ 1 : For same input in a function it should give the same output everytime. (but in Math.random(), even if you give same input it will give different output everytime, so it is an impure function)
+  
+ 2 : It should never change the value of the variables in the global scope.
+
+ # 32 Synchronous and Asynchronous Javascript
+ => <b>Synchronous vs Asynchronous : </b>: When we execute the code sequentially meaning that until and unless the first part of code doesn't gives an output the execution doesn't moves to execute the other part of the code. Whereas in Async, multiple tasks start to execute together and the part which gives the anwer first gets executed first. 
+
+	ex. Task a - 3
+ 	    Task b - 5
+      	    Task c - 15
+	    Task d - 2
+     In above sequence in sync execution , first task A will run , once A gets completed, only then B will start executing, once B gets executed then C will get executed and then D will execute.
+
+     In Async execution, first all the four tasks will start at the same time, first the task D will complete it's execution coz its taking smallest time, then after 1 sec task A will give it's output, similary after sometime tasks B and C will give their answer. So overall Async execution will take less time than Synch execution, coz here tasks executes parallely.
+
+<b>How to know if we are writing Asynchronous Code </b> : If we are using setTimeOut, setTimeInterval, Promises,fetch, axios, XMLHttpRequest. These methods are asynchronous.
+     
  		
    
