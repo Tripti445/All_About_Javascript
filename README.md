@@ -448,6 +448,7 @@ In short we can say that we use a constructor function when you want to create m
 <b>How to know if we are writing Asynchronous Code </b> : If we are using setTimeOut, setTimeInterval, Promises,fetch, axios, XMLHttpRequest. These methods are asynchronous.
 
 <b>Asynchronous Javascript : </b>By Default Javascript is Synchronous in nature which means it executes a code sequentially. But if in between the code there is a server request which will take some amount of time to get the response from the server, and the execution time is not confirmed then in that case we use async javascipt to execute that line. Because if we will not use async there then the further line of code will execute before the previous line will get the response and return the ans.
-     
+
+<b>Main Stack and Side Stack : </b>In Javascript execution, there are 2 Stacks that come into use, first is the Main Stack and other is the Side Stack. All the synchronous code gets in Main stack for execution whereas if there is some asynchronous code to be executed it goes to the Side Stack. The main stack interacts with the side stack to get info whether the asynchronous code execution is completed or not through Event Loop. If the execution of Async Code is completed in Side Stack then the output of the code gets to the mainstack and then mainstack sends the output to the console.
  		
    
