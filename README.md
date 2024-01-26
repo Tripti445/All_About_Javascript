@@ -447,8 +447,32 @@ In short we can say that we use a constructor function when you want to create m
 
 <b>How to know if we are writing Asynchronous Code </b> : If we are using setTimeOut, setTimeInterval, Promises,fetch, axios, XMLHttpRequest. These methods are asynchronous.
 
-<b>Asynchronous Javascript : </b>By Default Javascript is Synchronous in nature which means it executes a code sequentially. But if in between the code there is a server request which will take some amount of time to get the response from the server, and the execution time is not confirmed then in that case we use async javascipt to execute that line. Because if we will not use async there then the further line of code will execute before the previous line will get the response and return the ans.
+### Asynchronous Javascript
+By Default Javascript is Synchronous in nature which means it executes a code sequentially. But if in between the code there is a server request which will take some amount of time to get the response from the server, and the execution time is not confirmed then in that case we use async javascipt to execute that line. Because if we will not use async there then the further line of code will execute before the previous line will get the response and return the ans.
 
-<b>Main Stack and Side Stack : </b>In Javascript execution, there are 2 Stacks that come into use, first is the Main Stack and other is the Side Stack. All the synchronous code gets in Main stack for execution whereas if there is some asynchronous code to be executed it goes to the Side Stack. The main stack interacts with the side stack to get info whether the asynchronous code execution is completed or not through Event Loop. If the execution of Async Code is completed in Side Stack then the output of the code gets to the mainstack and then mainstack sends the output to the console.
+### Main Stack and Side Stack 
+=> In Javascript execution, there are 2 Stacks that come into use, first is the Main Stack and other is the Side Stack. All the synchronous code gets in Main stack for execution whereas if there is some asynchronous code to be executed it goes to the Side Stack. The main stack interacts with the side stack to get info whether the asynchronous code execution is completed or not through Event Loop. If the execution of Async Code is completed in Side Stack then the output of the code gets to the mainstack and then mainstack sends the output to the console.
+
+### Promises
+=> In Javascript the Promises is a part of Asynchronous Code. Promises basically accepts a function as a parameter whose 2 arguments are resolve or reject. So basically it depicts that if you are sending a request to a server to get some data as a response so that request might get resolved or might get rejected. So similary we handle both the resolve and reject inside a Promise. Since a Promise is a Async code so it would take some uncertain time to complete and during that time it will be in a "Pending State". So this pending state Promise is stored in a variable. After the completion the resolve part is handled using ".then()" method and the reject part is handled using ".catch()" part. 
+
+	Ex. var ans = new Promise((res,rej)=>{
+
+	    number = Math.floor(Math.random()*10);
+	    if(number<5){
+	        return res();
+	    }
+	    else
+	    {
+	        return rej();
+	    }
+	})
+	
+	ans
+	.then(function(){
+	    console.log("Promise Resolved")
+	}).catch(function(){
+	    console.log("Promise Rejected")
+	})
  		
    
