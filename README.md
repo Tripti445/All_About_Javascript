@@ -468,11 +468,48 @@ By Default Javascript is Synchronous in nature which means it executes a code se
 	    }
 	})
 	
-	ans
-	.then(function(){
-	    console.log("Promise Resolved")
-	}).catch(function(){
-	    console.log("Promise Rejected")
+		ans
+		.then(function(){
+		    console.log("Promise Resolved")
+		}).catch(function(){
+		    console.log("Promise Rejected")
+		})
+
+ ### Promise Chaining
+ => Sometimes we have multiple code lines which are asynchronous and need to be executed sequentially, in that case we use Promise Chaining which resolves every line of code and in next step returns a new promise to resolve the other step.
+
+ 	// 1 : bring milk and chai patti from market
+	// 2 : put pan in the stove
+	// 3 : put the ingredients in the pan along with water
+	// 4 : serve the tea in cup
+	
+	var p1 = new Promise(function(resolve,reject){
+	    return resolve("bring milk and chai patti from market");
+	})
+	
+	var p2 = p1.then(function(data){
+	    console.log(data)
+	    return new Promise(function(resolve,reject){
+	        return resolve("put pan in the stove");
+	    })
+	})
+	
+	var p3 = p2.then(function(data){
+	    console.log(data)
+	    return new Promise(function(resolve,reject){
+	        return resolve("put the ingredients in the pan along with water");
+	    })
+	})
+	
+	var p4 = p3.then(function(data){
+	    console.log(data)
+	    return new Promise(function(resolve,reject){
+	        return resolve("serve the tea in cup");
+	    })
+	})
+	
+	var final = p4.then(function(data){
+	    console.log(data);
 	})
  		
    
