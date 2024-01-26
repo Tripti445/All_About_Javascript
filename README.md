@@ -511,5 +511,14 @@ By Default Javascript is Synchronous in nature which means it executes a code se
 	var final = p4.then(function(data){
 	    console.log(data);
 	})
+
+### Async and Await
+=> In Asychronous code we use a Promise and if we are using a Promise then we have to use ".then()" method to handle the after resolve code. But if we want to avoid ".then()" method then we use Async and Await. In Asycn function we have to wait until the function returns some value. So we use "await" keyword to wait until the code returns the result.
+
+ 	Ex. async function getData() {
+  		const raw = await fetch('https://randomuser.me/api/");
+    		const ans = await raw.json();
+      		console.log(ans)
+  		}
  		
    
